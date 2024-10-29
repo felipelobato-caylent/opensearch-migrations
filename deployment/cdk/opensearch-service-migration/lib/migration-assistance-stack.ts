@@ -103,6 +103,7 @@ export class MigrationAssistanceStack extends Stack {
         })
 
         const mskLogGroup = new LogGroup(this, 'migrationMSKBrokerLogGroup',  {
+            logGroupName: '/aws/vendedlogs/migrationMSKBrokerLogGroup',
             retention: RetentionDays.THREE_MONTHS
         });
 

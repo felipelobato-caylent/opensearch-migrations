@@ -150,7 +150,7 @@ export class ReindexFromSnapshotStack extends MigrationServiceCore {
             name: 'snapshot-volume',
             managedEBSVolume: {
                 size: Size.gibibytes(volumeSizeGB),
-                volumeType: EbsDeviceVolumeType.GP3,
+                volumeType: EbsDeviceVolumeType.GP2,
                 fileSystemType: FileSystemType.XFS,
                 throughput: props.reindexFromSnapshotWorkerSize === "maximum" ? 450 : 125,
                 tagSpecifications: [{
