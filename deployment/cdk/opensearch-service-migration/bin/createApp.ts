@@ -7,7 +7,9 @@ export function createApp(): App {
   const versionFile = readFileSync('../../../VERSION', 'utf-8');
   const version = versionFile.replace(/\n/g, '');
   Tags.of(app).add("migration_deployment", version);
-
+  Tags.of(app).add('caylent:owner', 'felipe.silva@caylent.com'); 
+  Tags.of(app).add('caylent:project', 'smart_goal_opensearch_migration'); 
+  Tags.of(app).add('Name', 'elasticsearch-migration-lab');
   const account = process.env.CDK_DEFAULT_ACCOUNT;
   const region = process.env.CDK_DEFAULT_REGION;
   const migrationsAppRegistryARN = process.env.MIGRATIONS_APP_REGISTRY_ARN;
