@@ -196,7 +196,8 @@ export class OpenSearchDomainStack extends Stack {
       accessPolicies: accessPolicies,
       useUnsignedBasicAuth: props.useUnsignedBasicAuth,
       capacity: {
-        dataNodeInstanceType: props.dataNodeInstanceType,
+        //dataNodeInstanceType: props.dataNodeInstanceType,
+        dataNodeInstanceType: "t3.small.search",
         dataNodes: props.dataNodes,
         masterNodeInstanceType: props.dedicatedManagerNodeType,
         masterNodes: props.dedicatedManagerNodeCount,
