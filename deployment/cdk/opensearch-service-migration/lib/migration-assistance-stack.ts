@@ -22,6 +22,7 @@ import {
 } from "@aws-cdk/aws-msk-alpha";
 import {SelectedSubnets} from "aws-cdk-lib/aws-ec2/lib/vpc";
 import {KafkaYaml} from "./migration-services-yaml";
+import {InstanceType} from "aws-cdk-lib/aws-ec2";
 
 export interface MigrationStackProps extends StackPropsExt {
     readonly vpc: IVpc,
@@ -117,6 +118,7 @@ export class MigrationAssistanceStack extends Stack {
             numberOfBrokerNodes: brokerNodesPerAZ,
             vpc: props.vpc,
             vpcSubnets: subnets,
+            instanceType: new InstanceType('t3.small'),
             securityGroups: [streamingSecurityGroup],
             configurationInfo: {
                 arn: mskClusterConfig.attrArn,
