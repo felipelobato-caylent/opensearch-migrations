@@ -1,34 +1,11 @@
 {
-  "default": {
-    "stage": "<STAGE>",
-    "targetCluster": {
-      "endpoint": "<TARGET_CLUSTER_ENDPOINT>",
-      "auth": {
-        "type": "none | basic | sigv4",
-        "// basic auth documentation": "The next two lines are releavant for basic auth only",
-        "username": "<USERNAME>",
-        "passwordFromSecretArn": "<ARN_OF_SECRET_CONTAINING_PASSWORD>",
-        "// sigv4 documentation": "The next two lines are releavant for sigv4 only",
-        "region": "<REGION>",
-        "serviceSigningName": "es | aoss"
-      }
-    },
-    "sourceCluster": {
-      "endpoint": "<SOURCE_CLUSTER_ENDPOINT>",
-      "version": "<SOURCE_CLUSTER_VERSION, ES_7.10 or OS_1.3>",
-      "auth": {
-        "type": "none | basic | sigv4",
-        "// basic auth documentation": "The next two lines are releavant for basic auth only",
-        "username": "<USERNAME>",
-        "passwordFromSecretArn": "<ARN_OF_SECRET_CONTAINING_PASSWORD>",
-        "// sigv4 documentation": "The next two lines are releavant for sigv4 only",
-        "region": "<REGION>",
-        "serviceSigningName": "es | aoss"
-      }
-    },
-    "vpcId": "<VPC_ID>",
+  "migration-lab": {
+    "stage": "dev",
+    "vpcId": "vpc-0bf2f390c74f05f12",
+    "vpcSubnetIds": ["subnet-0d4e270d7466e185c"],
     "reindexFromSnapshotServiceEnabled": true,
     "reindexFromSnapshotMaxShardSizeGiB": 80,
-    "trafficReplayerServiceEnabled": true
+    "trafficReplayerServiceEnabled": true,
+    "elasticsearchServiceEnabled": true
   }
 }
